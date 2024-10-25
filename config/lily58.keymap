@@ -1,0 +1,32 @@
+/* source key position labels */
+#include "zmk-helpers/key-labels/lily58.h"
+
+/* map the Glove's extra keys */
+#define X_LT  \
+                &kp ESC &kp N1 &kp N2 &kp N3 &kp N4 &kp N5   &kp N6 &kp N7 &kp N8 &kp N9 &kp N0 &kp MINUS \
+                &kp TAB
+#define X_RT    &kp BACKSLASH
+
+#define X_LM    &none
+#define X_RM    &none
+
+#define X_LB    &none
+#define X_MB    &none &none
+#define X_RB    &none
+
+#define X_LH    &kp LEFT &kp DOWN
+#define X_RH    &kp UP   &kp RIGHT
+
+// #define X_LB    &none
+// #define X_MB    &kp ESC &none &none       &none &none &kp RETURN
+// #define X_RB    &none
+
+// #define X_LH    &none &none &none &kp LEFT &kp RIGHT
+// #define X_MH    &none SMART_NUM
+// #define X_RH    &kp UP &kp DOWN &none &none &none
+
+/* activate bluetooth */
+#define CONFIG_WIRELESS
+
+/* source the main keymap */
+#include "base.keymap"
