@@ -2,7 +2,7 @@
 #define CONFIG_WIRELESS
 
 /* map the Glove's extra keys */
-#define ZMK_BASE_LAYER(name, LT, RT, LM, RM, LB, RB, LH, RH)                                                \
+/* #define ZMK_BASE_LAYER(name, LT, RT, LM, RM, LB, RB, LH, RH)                                                \
     ZMK_LAYER(name,                                                                                         \
         &kp ESC &kp N1 &kp N2 &kp N3 &kp N4 &kp N5   &kp N6 &kp N7 &kp N8 &kp N9 &kp N0 &kp MINUS &kp TAB LT  \
         RT &kp BACKSLASH                                                                                       \
@@ -13,8 +13,24 @@
         &kp LEFT &kp DOWN LH                                                                                  \
         RH &kp UP   &kp RIGHT                                                                                 \
     )
+*/
+
+
+#define ZMK_BASE_LAYER(name, LT, RT, LM, RM, LB, RB, LH, RH)                                                \
+    ZMK_LAYER(name,                                                                                         \
+        &kp ESC &kp N1 &kp N2 &kp N3 &kp N4 &kp N5   &kp N6 &kp N7 &kp N8 &kp N9 &kp N0 &kp MINUS &kp TAB LT  \
+        RT &kp Z                                                                                       \
+        &none LM                                                                                              \
+        RM &kp Q                                                                                              \
+        &none LB &none &none                                                                                              \
+        RB &none                                                                                         \
+        &kp LEFT &kp DOWN LH                                                                                  \
+        RH &kp UP   &kp RIGHT                                                                                 \
+    )
 
 /* source key position labels */
 #include "zmk-helpers/key-labels/lily58.h"
-/* source the main keymap */
+/* source the main keymap 
 #include "base.keymap"
+*/
+#include "hands-down-promethium.keymap"
