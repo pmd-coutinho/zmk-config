@@ -1,0 +1,4 @@
+name: zmk-keyboard-witchcraft
+build:
+  settings:
+    board_root: .
