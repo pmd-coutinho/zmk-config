@@ -21,7 +21,6 @@
 #define FN 2
 #define NUM 3
 #define SYS 4
-#define MOUSE 5
 
 #define XXX &none
 #define ___ &trans
@@ -69,7 +68,6 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS) // Right-hand HRMs.
 /* Combos, leader key sequences, mouse emulation */
 
 // #include "combos.dtsi" // Must be sourced after HRM-combo hack.
-// #include "mouse.dtsi"
 
 /* Nav cluster */
 
@@ -130,13 +128,6 @@ ZMK_TAP_DANCE(num_dance, bindings = <&num_word NUM>, <&sl NUM>;
 
 /* Custom behaviors */
 
-// from example
-// tap: copy | double-tap: cut
-ZMK_TAP_DANCE(copy_cut,
-    tapping-term-ms = <200>;
-    bindings = <&kp LC(INS)>, <&kp LC(X)>;
-)
-
 // Alt+Tab swapper, requires tri-state module.
 ZMK_TRI_STATE(swapper, bindings = <&kt LALT>, <&kp TAB>, <&kt LALT>;
               ignored-key-positions = <LT2 RT2 RM1 RM2 RM3>;)
@@ -193,11 +184,11 @@ ZMK_COMBO(paste,    &kp LS(INS), LB1 LB2, ALL)  // paste, active on all layers
 
 ZMK_LAYER(default_layer,
 // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-     &kp TAB       &kp Q         &kp W         &kp E         &kp R         &kp T             &kp Y         &kp U         &kp I         &kp O         &kp P         &kp DEL
+     &kp TAB       &kp Q         &kp W         &kp E         &kp R         &kp T       ,     &kp Y         &kp U         &kp I         &kp O         &kp P         &kp DEL
 // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-     &gresc        &hml LGUI A   &hml LALT S   &hml LCTRL D  &hml LSHFT F  &kp G             &kp H         &hmr RSHFT J  &hmr LCTRL K  &hmr LALT L   &hmr LGUI SEMI &kp SQT
+     &gresc        &hml LGUI A   &hml LALT S   &hml LCTRL D  &hml LSHFT F  &kp G       ,     &kp H         &hmr RSHFT J  &hmr LCTRL K  &hmr LALT L  &hmr LGUI SEMI &kp SQT
 // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-     &sk LSHFT     &kp Z         &kp X         &kp C         &kp D         &kp V             &kp K         &kp H         &kp COMMA     &kp DOT       &kp SEMI
+     &sk LSHFT     &kp Z         &kp X         &kp C         &kp V         &kp B       ,     &kp N         &kp M         &kp LT        &kp DOT       &kp FSLH      &kp RCTRL
 // ╰───────────────────────────────────────────────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼───────────────────────────────────────────────────────╯
                                                &kp PSCRN     &lt_spc NAV 0 &lt FN RET  ,     SMART_NUM     MAGIC_SHIFT
 //                                           ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
