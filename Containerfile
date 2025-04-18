@@ -32,13 +32,12 @@ RUN mkdir /root/zmk-workspace
 # The first time you enter the workspace, you will be prompted to allow direnv
 WORKDIR /root/zmk-workspace
 
+CMD bash
+
 # Allow direnv for the workspace, which will set up the environment (this takes a while)
 # direnv allow
 
 # Initialize the Zephyr workspace and pull in the ZMK dependencies
 # (same as `west init -l config && west update && west zephyr-export`)
 # just init
-
-# CMD direnv allow ; just init ; exec just build all
-# CMD ["sh", "-c", "direnv allow && just init && exec just build all"]
-CMD sh
+# just build all
