@@ -12,9 +12,6 @@
 
 #include "zmk-helpers/helper.h"
 #include "zmk-helpers/key-labels/42.h"
-// // is this mandatory?
-// #include "zmk-helpers/unicode-chars/greek.dtsi"
-// #include "zmk-helpers/unicode-chars/german.dtsi"
 
 #define DEF 0
 #define NAV 1
@@ -169,12 +166,12 @@ ZMK_TAP_DANCE(copy_cut, bindings = <&kp LC(INS)>, <&kp LC(X)>;
 
 // Misc aliases. [TODO: clean up]
 #define CANCEL    &kp K_CANCEL            // Cancel caps-word & auto-layers.
-#define DSK_PREV  &hmr LCTRL LG(LC(LEFT)) // Previous desktop.
-#define DSK_NEXT  &hmr LALT LG(LC(RIGHT)) // Next     desktop.
-#define PIN_WIN   &kp LG(LC(LS(Q)))       // Pin window across desktops.
-#define PIN_APP   &kp LG(LC(LS(A)))       // Pin application across desktops.
-#define DSK_MGR   &kp LA(GRAVE)           // Desktop manager.
-#define VOL_DOWN  &hmr RSHFT C_VOL_DN
+// #define DSK_PREV  &hmr LCTRL LG(LC(LEFT)) // Previous desktop.
+// #define DSK_NEXT  &hmr LALT LG(LC(RIGHT)) // Next     desktop.
+// #define PIN_WIN   &kp LG(LC(LS(Q)))       // Pin window across desktops.
+// #define PIN_APP   &kp LG(LC(LS(A)))       // Pin application across desktops.
+// #define DSK_MGR   &kp LA(GRAVE)           // Desktop manager.
+// #define VOL_DOWN  &hmr RSHFT C_VOL_DN
 
 // // combos
 // ZMK_COMBO(copy_cut, &copy_cut,   LB2 LB3, ALL)  // copy on tap, cut on double-tap, active on all layers
@@ -210,23 +207,23 @@ ZMK_LAYER(Nav,
 //                                           ╰─────────────┴─────────────╯   ╰─────────────┴─────────────╯
 )
 
-ZMK_BASE_LAYER(Fn,
-//╭─k────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-    &kp F12       &kp F7        &kp F8        &kp F9        ___         ,   ___           &kp C_PREV    &kp C_VOL_UP  &kp C_NEXT    ___         ,
-//├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-    &hml LGUI F11 &hml LALT F4  &hml LSHFT F5 &hml LCTRL F6 ___         ,   ___           DSK_PREV      VOL_DOWN      DSK_NEXT      ___         ,
-//├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-    &kp F10       &kp F1        &kp F2        &kp F3        ___         ,   PIN_APP       PIN_WIN       DSK_MGR       ___           ___         ,
-//╰─────────────┼─────────────┴─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┴───────────────────────────╯
-                                              ___           ___         ,   &kp C_MUTE    &kp C_PP
-//                                          ╰─────────────┴─────────────╯ ╰─────────────┴─────────────╯
-)
+// ZMK_LAYER(Fn,
+// //╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
+//     &kp F12       &kp F7        &kp F8        &kp F9        ___         ,   ___           &kp C_PREV    &kp C_VOL_UP  &kp C_NEXT    ___         ,
+// //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+//     &hml LGUI F11 &hml LALT F4  &hml LSHFT F5 &hml LCTRL F6 ___         ,   ___           DSK_PREV      VOL_DOWN      DSK_NEXT      ___         ,
+// //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+//     &kp F10       &kp F1        &kp F2        &kp F3        ___         ,   PIN_APP       PIN_WIN       DSK_MGR       ___           ___         ,
+// //╰─────────────┼─────────────┴─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┴───────────────────────────╯
+//                                               ___           ___         ,   &kp C_MUTE    &kp C_PP
+// //                                          ╰─────────────┴─────────────╯ ╰─────────────┴─────────────╯
+// )
 
 ZMK_LAYER(Num,
 // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
      ___           ___           ___           ___           ___           ___               ___           &kp N7        &kp N8        &kp N9        ___                ___
 // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-     ___           &sk LGUI      &sk LALT      &sk LCTRL     &sk LSHFT     ___               ___           &hml RSHFT N4 &hml LCTRL N5 &hml LALT N6  &hml LGUI N0  ___
+     ___           &sk LGUI      &sk LALT      &sk LCTRL     &sk LSHFT     ___               ___           &hmr RSHFT N4 &hmr LCTRL N5 &hmr LALT N6  &hmr LGUI N0  ___
 // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
      ___           ___           ___           ___           ___           ___               ___           &kp N1        &kp N2        &kp N3        ___           ___
 // ╰───────────────────────────────────────────────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼───────────────────────────────────────────────────────╯
