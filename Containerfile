@@ -13,10 +13,12 @@ RUN nix profile install nixpkgs#direnv nixpkgs#nix-direnv
 RUN nix profile install nixpkgs#just
 
 # Install fish?
-RUN nix profile install nixpkgs#fish
+RUN nix profile install nixpkgs#fish nixpkgs#util-linux
 
 # Install the shell-hook
 RUN echo 'eval "$(direnv hook bash)"' >> ~/.bashrc
+RUN mkdir -p ~/.config/fish
+RUN echo 'direnv hook fish | source' >> ~/.config/fish/config.fish
 
 # Enable nix-direnv (if installed in the previous step)
 RUN mkdir -p ~/.config/direnv
@@ -32,7 +34,8 @@ RUN mkdir /root/zmk-workspace
 # The first time you enter the workspace, you will be prompted to allow direnv
 WORKDIR /root/zmk-workspace
 
-CMD bash
+CMD fish
+# CMD bash
 
 # Allow direnv for the workspace, which will set up the environment (this takes a while)
 # direnv allow
