@@ -34,6 +34,11 @@ ZMK_COMBO(tilde, &kp TILDE,    LM4 LM5,     DEF NAV NUM, COMBO_TERM_SLOW, COMBO_
 
 /* Horizontal combos - right hand */
 
+ZMK_COMBO(cut,   &kp LC(X),    RB1 RB3,     DEF NAV NUM, COMBO_TERM_FAST, COMBO_IDLE_FAST)
+ZMK_COMBO(copy,  &kp LC(INS),  RB1 RB2,     DEF NAV NUM, COMBO_TERM_FAST, COMBO_IDLE_FAST)
+ZMK_COMBO(paste, &kp LS(INS),  RB2 RB3,     DEF NAV NUM, COMBO_TERM_FAST, COMBO_IDLE_FAST)
+ZMK_COMBO(undo,  &kp LC(Z),    RM3 RB4,     DEF NAV NUM, COMBO_TERM_FAST, COMBO_IDLE_FAST)
+
 // Combos overlapping HRMs are set up as hold-taps themselves to allow for instantaneous
 // chording of mods. Custom hold-tap instances can be bootstrapped on the go using the
 // 8-argument version of ZMK_COMBO defined in base.keymap.
@@ -66,8 +71,3 @@ ZMK_COMBO(amps,  &kp AMPS,     RT3 RM3,     DEF NAV NUM, COMBO_TERM_SLOW, COMBO_
 ZMK_COMBO(under, &kp UNDER,    RM0 RB0,     DEF NAV NUM, COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
 ZMK_COMBO(fslh,  &kp FSLH,     RM2 RB2,     DEF NAV NUM, COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
 ZMK_COMBO(pipe,  &kp PIPE,     RM3 RB3,     DEF NAV NUM, COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
-
-ZMK_COMBO(cut,   &kp LC(X),    RB1 RB3,     DEF NAV NUM, COMBO_TERM_FAST, COMBO_IDLE_FAST)
-ZMK_COMBO(copy,  &kp LC(INS),  RB1 RB2,     DEF NAV NUM, COMBO_TERM_FAST, COMBO_IDLE_FAST)
-ZMK_COMBO(paste, &kp LS(INS),  RB2 RB3,     DEF NAV NUM, COMBO_TERM_FAST, COMBO_IDLE_FAST)
-ZMK_COMBO(undo,  &kp LC(Z),    RM3 RB4,     DEF NAV NUM, COMBO_TERM_FAST, COMBO_IDLE_FAST)
