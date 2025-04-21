@@ -175,12 +175,7 @@ ZMK_TAP_DANCE(copy_cut, bindings = <&kp LC(INS)>, <&kp LC(X)>;
 #define DSK_MGR   &kp LA(GRAVE)           // Desktop manager.
 #define VOL_DOWN  &hmr RSHFT C_VOL_DN
 
-// // combos
-// ZMK_COMBO(copy_cut, &copy_cut,   LB2 LB3, ALL)  // copy on tap, cut on double-tap, active on all layers
-// ZMK_COMBO(paste,    &kp LS(INS), LB1 LB2, ALL)  // paste, active on all layers
-
-// Mine
-
+// My
 ZMK_MOD_MORPH(spc_under, bindings = <&kp SPACE>, <&kp UNDER>;
               mods = <(MOD_LSFT|MOD_RSFT)>;)
 #define HYPER LS(LC(LA(LGUI)))
