@@ -10,11 +10,9 @@
   #define _BT_SEL_KEYS_ &trans &trans &trans &trans &trans
 #endif
 
-#include "zmk-helpers/key-labels/42.h"
+#define HOST_OS 1
 #include "zmk-helpers/helper.h"
-
-#include <layouts/foostan/corne/6column.dtsi>
-ZMK_APPLY_MATRIX_TRANSFORM(foostan_corne_6col_layout)
+#include "zmk-helpers/key-labels/42.h"
 
 #define DEF 0
 #define NAV 1
