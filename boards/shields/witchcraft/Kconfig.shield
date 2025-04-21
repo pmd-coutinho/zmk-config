@@ -1,6 +1,6 @@
 # No whitespace after the comma or in the keyboard name!
-config SHIELD_WITCHCRAFT_BEACON
-    def_bool $(shields_list_contains,witchcraft_beacon)
+# config SHIELD_WITCHCRAFT_BEACON
+#     def_bool $(shields_list_contains,witchcraft_beacon)
     
 config SHIELD_CORNE_LEFT
     def_bool $(shields_list_contains,corne_left)
