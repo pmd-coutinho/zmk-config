@@ -10,7 +10,7 @@ draw := absolute_path('draw')
 _parse_combos:
     #!/usr/bin/env bash
     set -euo pipefail
-    cconf="{{ config / 'combos.dtsi' }}"
+    cconf="{{ config / 'witchcraft-combos.dtsi' }}"
     if [[ -f $cconf ]]; then
         # set MAX_COMBOS_PER_KEY to the most frequent combos count
         count=$(
