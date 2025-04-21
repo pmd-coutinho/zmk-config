@@ -56,6 +56,13 @@ parse_config:
     "&mkp MB4": Back Click
     "&mkp MB5": Forward Click
 
+    # Mine
+    "&kp LC(Z)": Undo
+    "&kp LS(LC(LA(LGUI)))": Hyper
+    "&hmr LC(LALT)RIGHT": →
+    "&hmr RS(LCTRL)ESC": Esc
+    "&hmr LA(LGUI)LC(A)": Select All
+
   trans_legend: { "t": "", "type": "trans" }
 
   zmk_combos:

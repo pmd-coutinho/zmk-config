@@ -175,7 +175,7 @@ ZMK_TAP_DANCE(copy_cut, bindings = <&kp LC(INS)>, <&kp LC(X)>;
 #define DSK_MGR   &kp LA(GRAVE)           // Desktop manager.
 #define VOL_DOWN  &hmr RSHFT C_VOL_DN
 
-// My
+// Mine
 ZMK_MOD_MORPH(spc_under, bindings = <&kp SPACE>, <&kp UNDER>;
               mods = <(MOD_LSFT|MOD_RSFT)>;)
 #define HYPER LS(LC(LA(LGUI)))

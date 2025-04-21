@@ -1,4 +1,4 @@
-#if SHIELD_WITCHCRAFT_BEACON
+if SHIELD_WITCHCRAFT_BEACON
 
 # Max 16 characters in keyboard name
 config ZMK_KEYBOARD_NAME
@@ -23,4 +23,4 @@ config BT_MAX_CONN
 config BT_MAX_PAIRED
     default 6
 
-#endif
+endif
