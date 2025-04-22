@@ -179,6 +179,9 @@ ZMK_TAP_DANCE(copy_cut, bindings = <&kp LC(INS)>, <&kp LC(X)>;
 ZMK_MOD_MORPH(spc_under, bindings = <&kp SPACE>, <&kp UNDER>;
               mods = <(MOD_LSFT|MOD_RSFT)>;)
 #define HYPER LS(LC(LA(LGUI)))
+ZMK_MOD_MORPH(mid_shift, bindings = <&sk LSFT>, <&caps_word>;
+              mods = <(MOD_LSFT)>;)
+// #define MID_SHIFT &mid_shift 
 
 /* Keymap */
 
@@ -190,9 +193,9 @@ ZMK_LAYER(Base,
 // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
      &gresc        &hml LGUI A   &hml LALT S   &hml LCTRL D  &hml LSHFT F  &kp G             &kp H         &hmr RSHFT J  &hmr LCTRL K  &hmr LALT L  &hmr LGUI SQT  &swapper
 // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-     MAGIC_SHIFT   &kp Z         &kp X         &kp C         &kp V         &kp B             &kp N         &kp M         &comma_morph  &dot_morph    &kp FSLH      &sk HYPER
+     MAGIC_SHIFT   &kp Z         &kp X         &kp C         &kp V         &kp B             &kp N         &kp M         &comma_morph  &dot_morph    &kp FSLH      &kp DEL
 // ╰───────────────────────────────────────────────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼───────────────────────────────────────────────────────╯
-                                               SMART_NUM    &mt_spc LGUI 0 &lt FN TAB        &lt NAV RET   &bs_del       MAGIC_SHIFT
+                                               SMART_NUM    &mt_spc LGUI 0 &lt FN TAB        &lt NAV RET   &kp BSPC      &mid_shift
 //                                           ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
 )
 
