@@ -153,7 +153,7 @@ SIMPLE_MORPH(rpar_gt, SFT, &kp RPAR, &kp GT)
 // Tap: space | Shift + tap: dot -> space -> sticky shift | Hold: nav layer.
 ZMK_HOLD_TAP(lt_spc, bindings = <&mo>, <&spc_morph>; flavor = "balanced";
              tapping-term-ms = <200>; quick-tap-ms = <QUICK_TAP_MS>;)
-ZMK_HOLD_TAP(lg_spc, bindings = <&kp LGUI>, <&spc_morph>; flavor = "balanced";
+ZMK_HOLD_TAP(mt_spc, bindings = <&kp>, <&spc_morph>; flavor = "balanced";
              tapping-term-ms = <200>; quick-tap-ms = <QUICK_TAP_MS>;)
 SIMPLE_MORPH(spc_morph, SFT, &kp SPACE, &dot_spc)
 ZMK_MACRO(dot_spc, bindings = <&kp DOT &kp SPACE &sk LSHFT>; wait-ms = <0>;
@@ -193,7 +193,7 @@ ZMK_LAYER(Base,
 // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
      MAGIC_SHIFT   &kp Z         &kp X         &kp C         &kp V         &kp B             &kp N         &kp M         &kp LT        &comma_morph  &dot_morph    &sk HYPER
 // ╰───────────────────────────────────────────────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼───────────────────────────────────────────────────────╯
-                                               SMART_NUM     &lg_spc       &lt FN TAB        &lt NAV RET   &bs_del       MAGIC_SHIFT
+                                               SMART_NUM    &mt_spc LGUI 0 &lt FN TAB        &lt NAV RET   &bs_del       MAGIC_SHIFT
 //                                           ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
 )
 
