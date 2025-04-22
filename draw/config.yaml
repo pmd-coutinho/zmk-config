@@ -16,9 +16,9 @@ parse_config:
     "&bt BT_SEL 2": BT 3
     "&bt BT_SEL 3": BT 4
 
-    "&kp LC(INS)": Copy
-    "&kp LC(X)": Cut
-    "&kp LS(INS)": Paste
+    # "&kp LC(INS)": Copy
+    # "&kp LC(X)": Cut
+    # "&kp LS(INS)": Paste
 
     "&kp LG(LC(LEFT))": Prev Desk
     "&kp LG(LC(RIGHT))": Next Desk
@@ -58,10 +58,14 @@ parse_config:
 
     # Mine
     "&kp LC(Z)": Undo
+    "&kp LC(X)": Cut
+    "&kp LC(C)": Copy
+    "&kp LC(V)": Paste
     "&kp LS(LC(LA(LGUI)))": Hyper
     "&hmr LC(LALT)RIGHT": →
     "&hmr RS(LCTRL)ESC": Esc
     "&hmr LA(LGUI)LC(A)": Select All
+    "&mid_shift": { "t": Midwit, "h": "Shift" }
 
   trans_legend: { "t": "", "type": "trans" }
 
@@ -69,10 +73,8 @@ parse_config:
     combo_cut: { align: bottom, o: 0.15 }
     combo_ldrsh: { align: top, o: 1.35 }
 
-    # combo_lt: { hidden: true }
-    # combo_gt: { hidden: true }
-    # combo_lbrc: { hidden: true }
-    # combo_rbrc: { hidden: true }
+    combo_lt: { align: top, o: 0.15 }
+    combo_gt: { align: top, o: 0.15 }
 
   zmk_keycode_map:
     # custom mappings

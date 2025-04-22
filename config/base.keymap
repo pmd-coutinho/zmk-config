@@ -152,8 +152,6 @@ SIMPLE_MORPH(rpar_gt, SFT, &kp RPAR, &kp GT)
 // Tap: space | Shift + tap: dot -> space -> sticky shift | Hold: nav layer.
 ZMK_HOLD_TAP(lt_spc, bindings = <&mo>, <&spc_morph>; flavor = "balanced";
              tapping-term-ms = <200>; quick-tap-ms = <QUICK_TAP_MS>;)
-ZMK_HOLD_TAP(mt_spc, bindings = <&kp>, <&spc_morph>; flavor = "balanced";
-             tapping-term-ms = <200>; quick-tap-ms = <QUICK_TAP_MS>;)
 SIMPLE_MORPH(spc_morph, SFT, &kp SPACE, &dot_spc)
 ZMK_MACRO(dot_spc, bindings = <&kp DOT &kp SPACE &sk LSHFT>; wait-ms = <0>;
           tap-ms = <5>;)
@@ -176,12 +174,13 @@ ZMK_TAP_DANCE(copy_cut, bindings = <&kp LC(INS)>, <&kp LC(X)>;
 #define VOL_DOWN  &hmr RSHFT C_VOL_DN
 
 // Mine
+ZMK_HOLD_TAP(mt_spc, bindings = <&kp>, <&spc_morph>; flavor = "balanced";
+             tapping-term-ms = <200>; quick-tap-ms = <QUICK_TAP_MS>;)
 ZMK_MOD_MORPH(spc_under, bindings = <&kp SPACE>, <&kp UNDER>;
               mods = <(MOD_LSFT|MOD_RSFT)>;)
 #define HYPER LS(LC(LA(LGUI)))
-ZMK_MOD_MORPH(mid_shift, bindings = <&sk LSFT>, <&caps_word>;
-              mods = <(MOD_LSFT)>;)
-// #define MID_SHIFT &mid_shift 
+ZMK_MOD_MORPH(mid_shift, bindings = <&sk RSHFT>, <&caps_word>;
+              mods = <(MOD_RSFT)>;)
 
 /* Keymap */
 
