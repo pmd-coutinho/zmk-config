@@ -174,7 +174,7 @@ ZMK_TAP_DANCE(copy_cut, bindings = <&kp LC(INS)>, <&kp LC(X)>;
 #define VOL_DOWN  &hmr RSHFT C_VOL_DN
 
 // Mine
-ZMK_HOLD_TAP(mt_spc, bindings = <&kp>, <&spc_morph>; flavor = "balanced";
+ZMK_HOLD_TAP(mt_spc, bindings = <&kp>, <&spc_under>; flavor = "balanced";
              tapping-term-ms = <200>; quick-tap-ms = <QUICK_TAP_MS>;)
 ZMK_MOD_MORPH(spc_under, bindings = <&kp SPACE>, <&kp UNDER>;
               mods = <(MOD_LSFT|MOD_RSFT)>;)
