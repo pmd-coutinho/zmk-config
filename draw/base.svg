@@ -647,8 +647,9 @@ path.combo { stroke: #7f7f7f; }
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 <text x="0" y="0" class="key tap">Tab</text>
 </g>
-<g transform="translate(644, 140)" class="key trans keypos-32">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
+<g transform="translate(644, 140)" class="key keypos-32">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
+<text x="0" y="0" class="key tap">PSCRN</text>
 </g>
 <g transform="translate(700, 147)" class="key trans keypos-33">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
@@ -1440,6 +1441,10 @@ path.combo { stroke: #7f7f7f; }
 <g class="combo combopos-37">
 <rect rx="6" ry="6" x="518" y="113" width="28" height="26" class="combo"/>
 <text x="532" y="126" class="combo tap"><tspan style="font-size: 88%">Sentence</tspan></text>
+</g>
+<g class="combo combopos-38">
+<rect rx="6" ry="6" x="742" y="64" width="28" height="26" class="combo"/>
+<text x="756" y="77" class="combo tap">PSCRN</text>
 </g>
 </g>
 </g>
