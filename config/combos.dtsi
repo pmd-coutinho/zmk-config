@@ -13,6 +13,9 @@
 #define COMBO_IDLE_FAST 150
 #define COMBO_IDLE_SLOW 50
 
+/* toggle colemak layer */
+ZMK_COMBO(reach, &tog CMK,     LH1 RH1,     DEF NAV NUM, COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
+
 /* Arrow keys */
 // TODO: overlapping with HRM?
 ZMK_COMBO(up,    &kp UP,       RT2 RM2,     DEF NAV NUM, COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
