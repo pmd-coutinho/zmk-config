@@ -34,6 +34,7 @@ RUN mkdir /root/zmk-workspace
 # The first time you enter the workspace, you will be prompted to allow direnv
 WORKDIR /root/zmk-workspace
 
+ENV TERM=xterm-256color
 CMD fish
 # CMD bash
 
