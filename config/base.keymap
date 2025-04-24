@@ -184,8 +184,8 @@ ZMK_HOLD_TAP(mt_spc, bindings = <&kp>, <&spc_under>; flavor = "balanced";
              tapping-term-ms = <200>; quick-tap-ms = <QUICK_TAP_MS>;)
 #define LGUI_SPC_ &mt_spc LGUI 0
 // switch lang mod morph
-ZMK_MOD_MORPH(bs_del_, bindings = <&bs_del>, <&kp SPACE>;
-              mods = <(MOD_LGUI|MOD_RGUI)>; keep-mods = <MOD_LGUI|MOD_RGUI>;)
+ZMK_MOD_MORPH(bs_del_l, bindings = <&bs_del>, <&kp SPACE>;
+              mods = <(MOD_LGUI|MOD_RGUI)>; keep-mods = <(MOD_LGUI|MOD_RGUI)>;)
 
 #define HYPER LS(LC(LA(LGUI)))
 #define PREV_WIN LS(TAB)
@@ -202,7 +202,7 @@ ZMK_LAYER(Base,
 // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
      &mid_shift    &kp Z         &kp X         &kp C         &kp V         &kp B             &kp N         &kp M         &comma_morph  &dot_morph    &kp FSLH      &kp DEL
 // ╰───────────────────────────────────────────────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼───────────────────────────────────────────────────────╯
-                                               SMART_NUM     LGUI_SPC_     &lt FN TAB        &lt NAV RET   &bs_del_      &mid_shift
+                                               SMART_NUM     LGUI_SPC_     &lt FN TAB        &lt NAV RET   &bs_del_l     &mid_shift
 //                                           ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
 )
 
