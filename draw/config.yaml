@@ -67,6 +67,9 @@ parse_config:
     "&hmr LA(LGUI)LC(A)": Select All
     "&mid_shift": { "t": Midwit, "h": "Shift" }
     "&bs_del_": { "t": "Bspc", "h": "Lang", "s": "Del" }
+    "&hml LS(LCTRL)MINUS": "-"
+    "&hml LS(LGUI)DQT": '"'
+    "&hml LA(LGUI)TILDE": "~"
 
   trans_legend: { "t": "", "type": "trans" }
 

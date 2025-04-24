@@ -183,9 +183,9 @@ ZMK_MOD_MORPH(spc_under, bindings = <&kp SPACE>, <&kp UNDER>;
 ZMK_HOLD_TAP(mt_spc, bindings = <&kp>, <&spc_under>; flavor = "balanced";
              tapping-term-ms = <200>; quick-tap-ms = <QUICK_TAP_MS>;)
 #define LGUI_SPC_ &mt_spc LGUI 0
-// TODO: switch lang mod morph
+// switch lang mod morph
 ZMK_MOD_MORPH(bs_del_, bindings = <&bs_del>, <&kp SPACE>;
-              mods = <(MOD_LGUI|MOD_RGUI)>;)
+              mods = <(MOD_LGUI|MOD_RGUI)>; keep-mods = <MOD_LGUI|MOD_RGUI>;)
 
 #define HYPER LS(LC(LA(LGUI)))
 #define PREV_WIN LS(TAB)
