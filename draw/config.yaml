@@ -60,6 +60,7 @@ parse_config:
     "&kp LC(X)": Cut
     "&kp LC(C)": Copy
     "&kp LC(V)": Paste
+    "&kp LC(F)": Find
     "&kp LS(LC(LA(LGUI)))": Hyper
     "&hmr LC(LALT)RIGHT": →
     "&hmr RS(LCTRL)ESC": Esc
