@@ -1417,37 +1417,33 @@ path.combo { stroke: #7f7f7f; }
 </g>
 <g class="combo combopos-32">
 <rect rx="6" ry="6" x="182" y="99" width="28" height="26" class="combo"/>
-<text x="196" y="112" class="combo tap">|</text>
-</g>
-<g class="combo combopos-33">
-<rect rx="6" ry="6" x="182" y="99" width="28" height="26" class="combo"/>
 <text x="196" y="112" class="combo tap">*</text>
 </g>
-<g class="combo combopos-34">
+<g class="combo combopos-33">
 <rect rx="6" ry="6" x="238" y="106" width="28" height="26" class="combo"/>
 <text x="252" y="119" class="combo tap">Find</text>
 </g>
-<g class="combo combopos-35">
+<g class="combo combopos-34">
 <rect rx="6" ry="6" x="686" y="106" width="28" height="26" class="combo"/>
 <text x="700" y="119" class="combo tap"><tspan style="font-size: 88%">Fullstop</tspan></text>
 </g>
-<g class="combo combopos-36">
+<g class="combo combopos-35">
 <rect rx="6" ry="6" x="518" y="113" width="28" height="26" class="combo"/>
 <text x="532" y="126" class="combo tap">Pscrn</text>
 </g>
-<g class="combo combopos-37">
+<g class="combo combopos-36">
 <rect rx="6" ry="6" x="574" y="50" width="28" height="26" class="combo"/>
 <text x="588" y="63" class="combo tap">Home</text>
 </g>
-<g class="combo combopos-38">
+<g class="combo combopos-37">
 <rect rx="6" ry="6" x="686" y="50" width="28" height="26" class="combo"/>
 <text x="700" y="63" class="combo tap">End</text>
 </g>
-<g class="combo combopos-39">
+<g class="combo combopos-38">
 <rect rx="6" ry="6" x="518" y="57" width="28" height="26" class="combo"/>
 <text x="532" y="70" class="combo tap">PgUp</text>
 </g>
-<g class="combo combopos-40">
+<g class="combo combopos-39">
 <rect rx="6" ry="6" x="742" y="64" width="28" height="26" class="combo"/>
 <text x="756" y="77" class="combo tap">PgDn</text>
 </g>
