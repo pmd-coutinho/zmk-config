@@ -183,12 +183,18 @@ ZMK_MOD_MORPH(spc_under, bindings = <&kp SPACE>, <&kp UNDER>;
 ZMK_HOLD_TAP(mt_spc, bindings = <&kp>, <&spc_under>; flavor = "balanced";
              tapping-term-ms = <200>; quick-tap-ms = <QUICK_TAP_MS>;)
 #define LGUI_SPC_ &mt_spc LGUI 0
+
 // switch lang mod morph
 ZMK_MOD_MORPH(bs_del_l, bindings = <&bs_del>, <&kp SPACE>;
               mods = <(MOD_LGUI|MOD_RGUI)>; keep-mods = <(MOD_LGUI|MOD_RGUI)>;)
 
+// gnome shell task switching
+ZMK_TRI_STATE(gswap, bindings = <&kt LGUI>, <&kp TAB>, <&kt LGUI>;
+              ignored-key-positions = <LT2 RT2 RM1 RM2 RM3>;)
+#define PREV_WIN &kp LS(TAB)
+#define NEXT_WIN &gswap
+
 #define HYPER LS(LC(LA(LGUI)))
-#define PREV_WIN LS(TAB)
 
 /* Keymap */
 
@@ -198,7 +204,7 @@ ZMK_LAYER(Base,
 // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
      &kp GRAVE     &kp Q         &kp W         &kp E         &kp R         &kp T             &kp Y         &kp U         &kp I         &kp O         &kp P         &kp LA(F4)
 // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-     &kp PREV_WIN  &hml LALT A   &hml LGUI S   &hml LSHFT D  &hml LCTRL F  &kp G             &kp H         &hmr LCTRL J  &hmr RSHFT K  &hmr LGUI L  &hmr LALT SQT  &swapper
+     PREV_WIN      &hml LALT A   &hml LGUI S   &hml LSHFT D  &hml LCTRL F  &kp G             &kp H         &hmr LCTRL J  &hmr RSHFT K  &hmr LGUI L  &hmr LALT SQT  NEXT_WIN
 // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
      &mid_shift    &kp Z         &kp X         &kp C         &kp V         &kp B             &kp N         &kp M         &comma_morph  &dot_morph    &kp FSLH      &kp DEL
 // ╰───────────────────────────────────────────────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼───────────────────────────────────────────────────────╯
