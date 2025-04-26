@@ -25,8 +25,8 @@ parse_config:
     "&kp LG(LC(LS(A)))": Pin App
     "&kp LG(LC(LS(Q)))": Pin Win
 
-    "&swapper": Next Win
-    "&kp LS(TAB)": Prev Win
+    # "&swapper": Next Win
+    # "&kp LS(TAB)": Prev Win
     "&num_dance": { "t": "Numword", "s": "Sticky Num" }
     "&magic_shift": { "t": Magic, "h": "Shift" }
     "&smart_mouse": Smart Mouse
@@ -70,7 +70,9 @@ parse_config:
     "&hml LS(LCTRL)MINUS": "-"
     "&hml LS(LGUI)DQT": '"'
     "&hml LA(LGUI)TILDE": "~"
-    "&gswap": Next Win
+    "&gswap": Next App
+    "&kp LS(TAB)": Prev App
+    "&gswapw": Next Win
     "&dot_spc": Fullstop
 
   trans_legend: { "t": "", "type": "trans" }
