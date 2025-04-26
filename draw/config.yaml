@@ -71,8 +71,8 @@ parse_config:
     "&hml LS(LCTRL)MINUS": "-"
     "&hml LS(LGUI)DQT": '"'
     "&hml LA(LGUI)TILDE": "~"
+    # "&kp LS(TAB)": Prev App
     "&app_swap": Next App
-    "&kp LS(TAB)": Prev App
     "&win_swap": Next Win
     "&dot_spc": Fullstop
 
