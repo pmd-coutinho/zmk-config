@@ -62,6 +62,7 @@ parse_config:
     "&kp LC(V)": Paste
     "&kp LC(F)": Find
     "&kp LS(LC(LA(LGUI)))": Hyper
+    "&kp RS(RC(RA(RGUI)))": Hyper
     "&hmr LC(LALT)RIGHT": →
     "&hmr RS(LCTRL)ESC": Esc
     "&hmr LA(LGUI)LC(A)": Select All
@@ -70,9 +71,9 @@ parse_config:
     "&hml LS(LCTRL)MINUS": "-"
     "&hml LS(LGUI)DQT": '"'
     "&hml LA(LGUI)TILDE": "~"
-    "&gswap": Next App
+    "&app_swap": Next App
     "&kp LS(TAB)": Prev App
-    "&gswapw": Next Win
+    "&win_swap": Next Win
     "&dot_spc": Fullstop
 
   trans_legend: { "t": "", "type": "trans" }
