@@ -175,12 +175,7 @@ ZMK_TAP_DANCE(copy_cut, bindings = <&kp LC(INS)>, <&kp LC(X)>;
 #define VOL_DOWN  &hmr RSHFT C_VOL_DN
 
 // Custom
-// ZMK_BEHAVIOR(lsk, sticky_key,
-//               lazy;)
-&lsk: {
-     compatible = "zmk,behavior-sticky-key";
-     lazy;
-}
+ZMK_STICKY_KEY(lsk, lazy)
 
 ZMK_MOD_MORPH(mid_shift, bindings = <&lsk RSHFT>, <&caps_word>;
               mods = <(MOD_RSFT)>;)
