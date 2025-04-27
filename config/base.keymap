@@ -175,7 +175,7 @@ ZMK_TAP_DANCE(copy_cut, bindings = <&kp LC(INS)>, <&kp LC(X)>;
 #define VOL_DOWN  &hmr RSHFT C_VOL_DN
 
 // Custom
-ZMK_MOD_MORPH(mid_shift, bindings = <&sk RSHFT>, <&caps_word>;
+ZMK_MOD_MORPH(arc_shift, bindings = <&sk RSHFT>, <&caps_word>;
               mods = <(MOD_RSFT)>;)
 
 ZMK_MOD_MORPH(spc_under, bindings = <&kp SPACE>, <&kp UNDER>;
@@ -210,13 +210,13 @@ ZMK_CONDITIONAL_LAYER(sys, FN NUM, SYS) // FN + NUM --> SYS.
 
 ZMK_LAYER(Base,
 // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-     &kp GRAVE     &kp Q         &kp W         &kp E         &kp R         &kp T             &kp Y         &kp U         &kp I         &kp O         &kp P         &kp PSCRN
+     &kp LA(F4)    &kp Q         &kp W         &kp E         &kp R         &kp T             &kp Y         &kp U         &kp I         &kp O         &kp P         &kp PSCRN
 // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-     &mid_shift    &hml LALT A   &hml LGUI S   &hml LSHFT D  &hml LCTRL F  &kp G             &kp H         &hmr LCTRL J  &hmr RSHFT K  &hmr LGUI L  &hmr LALT SQT  &kp LC(A)
+     &gresc        &hml LALT A   &hml LGUI S   &hml LSHFT D  &hml LCTRL F  &kp G             &kp H         &hmr LCTRL J  &hmr RSHFT K  &hmr LGUI L  &hmr LALT SQT  &kp DEL
 // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-     &sk LHYPER    &kp Z         &kp X         &kp C         &kp V         &kp B             &kp N         &kp M         &comma_morph  &dot_morph    &kp FSLH      &kp DEL
+     &arc_shift    &kp Z         &kp X         &kp C         &kp V         &kp B             &kp N         &kp M         &comma_morph  &dot_morph    &kp FSLH      &sk LHYPER
 // ╰───────────────────────────────────────────────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼───────────────────────────────────────────────────────╯
-                                               SMART_NUM     LGUI_SPC_     &lt FN TAB        &lt NAV RET   &bs_del_l     &mid_shift
+                                               SMART_NUM     LGUI_SPC_     &lt FN TAB        &lt NAV RET   &bs_del_l     &arc_shift
 //                                           ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
 )
 
@@ -234,7 +234,7 @@ ZMK_LAYER(Cmk-DH,
 
 ZMK_LAYER(Nav,
 // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-     ___           ___           NAV_DEL       NAV_UP        NAV_BSPC      &kp PG_UP         ___           ___           ___           ___           ___           &kp LA(F4)
+     ___           ___           NAV_DEL       NAV_UP        NAV_BSPC      &kp PG_UP         ___           ___           ___           ___           ___           ___       
 // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
      ___           ___           NAV_LEFT      NAV_DOWN      NAV_RIGHT     &kp PG_DN         ___           &app_swap     &kp LS(TAB)   &tab_swap     &win_swap     ___
 // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤

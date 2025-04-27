@@ -67,7 +67,7 @@ parse_config:
     "&hmr RS(LCTRL)ESC": Esc
     "&hmr LA(LGUI)LC(A)": Select All
     "&kp LC(A)": Select All
-    "&mid_shift": { "t": Arcane, "h": "Shift" }
+    "&arc_shift": { "t": Arcane, "h": "Shift" }
     "&bs_del_l": { "t": "Bspc", "h": "Lang", "s": "Del" }
     "&hml LS(LCTRL)MINUS": "-"
     "&hml LS(LGUI)DQT": '"'
