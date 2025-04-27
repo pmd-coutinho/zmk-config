@@ -191,14 +191,14 @@ ZMK_MOD_MORPH(bs_del_l, bindings = <&bs_del>, <&kp SPACE>;
 // gnome shell task switching
 // FIXME: ignored keys
 ZMK_TRI_STATE(app_swap, bindings = <&kt LGUI>, <&kp TAB>, <&kt LGUI>;
-              ignored-key-positions = <LT2 RT2 RM1 RM2 RM3>;)
+              ignored-key-positions = <RM2 LT2 LM1 LM2 LM3>;)
 // #define PREV_APP &kp LS(TAB)
 #define NEXT_APP &app_swap
 ZMK_TRI_STATE(win_swap, bindings = <&kt LGUI>, <&kp GRAVE>, <&kt LGUI>;
-              ignored-key-positions = <LT2 RT2 RM1 RM2 RM3>;)
+              ignored-key-positions = <RM2 LT2 LM1 LM2 LM3>;)
 #define NEXT_WIN &win_swap
 ZMK_TRI_STATE(tab_swap, bindings = <&kt LCTRL>, <&kp TAB>, <&kt LCTRL>;
-              ignored-key-positions = <LT2 RT2 RM1 RM2 RM3>;)
+              ignored-key-positions = <RM2 LT2 LM1 LM2 LM3>;)
 #define NEXT_TAB &tab_swap
 
 #define LHYPER LS(LC(LA(LGUI)))
@@ -234,9 +234,9 @@ ZMK_LAYER(Cmk-DH,
 
 ZMK_LAYER(Nav,
 // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-     ___           ___           NAV_DEL       NAV_UP        NAV_BSPC      &kp PG_UP         ___           &app_swap     &kp LS(TAB)   &tab_swap     &win_swap     &kp LA(F4)
+     ___           ___           NAV_DEL       NAV_UP        NAV_BSPC      &kp PG_UP         ___           ___           ___           ___           ___           &kp LA(F4)
 // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-     ___           ___           NAV_LEFT      NAV_DOWN      NAV_RIGHT     &kp PG_DN         ___           &sk LCTRL     &sk LSHFT     &sk LGUI      &sk LALT      ___
+     ___           ___           NAV_LEFT      NAV_DOWN      NAV_RIGHT     &kp PG_DN         ___           &app_swap     &kp LS(TAB)   &tab_swap     &win_swap     ___
 // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
      ___           ___           ___           ___           ___           ___               ___           &kp TAB       ___           ___           ___           ___
 // ╰───────────────────────────────────────────────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼───────────────────────────────────────────────────────╯
