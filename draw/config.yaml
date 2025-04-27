@@ -71,9 +71,10 @@ parse_config:
     "&hml LS(LCTRL)MINUS": "-"
     "&hml LS(LGUI)DQT": '"'
     "&hml LA(LGUI)TILDE": "~"
-    # "&kp LS(TAB)": Prev App
+    "&kp LS(TAB)": Prev
     "&app_swap": Next App
-    "&win_swap": Next Win
+    # "&win_swap": Next Win
+    "&tab_swap": Next Tab
     "&dot_spc": Fullstop
 
   trans_legend: { "t": "", "type": "trans" }
