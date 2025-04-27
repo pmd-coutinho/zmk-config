@@ -66,6 +66,7 @@ parse_config:
     "&hmr LC(LALT)RIGHT": →
     "&hmr RS(LCTRL)ESC": Esc
     "&hmr LA(LGUI)LC(A)": Select All
+    "&kp LC(A)": Select All
     "&mid_shift": { "t": Arcane, "h": "Shift" }
     "&bs_del_l": { "t": "Bspc", "h": "Lang", "s": "Del" }
     "&hml LS(LCTRL)MINUS": "-"
@@ -73,7 +74,7 @@ parse_config:
     "&hml LA(LGUI)TILDE": "~"
     "&kp LS(TAB)": Prev
     "&app_swap": Next App
-    # "&win_swap": Next Win
+    "&win_swap": Next Win
     "&tab_swap": Next Tab
     "&dot_spc": Fullstop
 

@@ -13,6 +13,8 @@
 #define COMBO_IDLE_FAST 150
 #define COMBO_IDLE_SLOW 50
 
+// TODO: consider reverse symbols
+
 /* toggle colemak layer */
 // ZMK_COMBO(cmkdh, &tog CMK,     LH1 RH1,     DEF CMK NAV NUM, COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
 
