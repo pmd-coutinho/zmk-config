@@ -76,7 +76,9 @@ parse_config:
     "&app_swap": Next App
     "&win_swap": Next Win
     "&tab_swap": Next Tab
+    "&kp LA(F4)": Close
     "&dot_spc": Fullstop
+    "&smart_num": { "t": Smart, "h": "Num" }
 
   trans_legend: { "t": "", "type": "trans" }
 
