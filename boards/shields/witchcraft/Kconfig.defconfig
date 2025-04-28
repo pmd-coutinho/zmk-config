@@ -1,8 +1,8 @@
-if SHIELD_WITCHCRAFT_BEACON
-
 # Max 16 characters in keyboard name
 config ZMK_KEYBOARD_NAME
     default "Witchcraft"
+
+if SHIELD_WITCHCRAFT_BEACON
 
 config ZMK_SPLIT_ROLE_CENTRAL
     default y
