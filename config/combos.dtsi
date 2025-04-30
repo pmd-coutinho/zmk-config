@@ -75,11 +75,7 @@ ZMK_COMBO(star,  &kp STAR,     LM2 LB2,     DEF CMK NAV NUM, COMBO_TERM_SLOW, CO
 ZMK_COMBO(find,  &kp LC(F),    LM1 LB1,     DEF CMK NAV NUM, COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
 
 /* Vertical combos - right hand */
-ZMK_MACRO(dot_spc, bindings = <&kp DOT &kp SPACE &sk LSHFT>; wait-ms = <0>;
-          tap-ms = <5>;)
 ZMK_COMBO(sentc, &dot_spc,     RM3 RB3,     DEF CMK NAV NUM, COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
-
-ZMK_COMBO(pscrn, &kp PSCRN,    RB0 RM0,     DEF CMK NAV NUM, COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
 
 ZMK_COMBO(home,  &kp HOME,     RT1 RM1,     DEF CMK NAV NUM, COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
 ZMK_COMBO(end,   &kp END,      RT3 RM3,     DEF CMK NAV NUM, COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
