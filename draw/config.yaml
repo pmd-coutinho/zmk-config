@@ -70,7 +70,8 @@ parse_config:
     "&arc_shift": { "t": Arcane, "h": "Shift" }
     "&bs_del_l": { "t": "Bspc", "h": "Lang", "s": "Del" }
     "&hml LS(LCTRL)MINUS": "-"
-    "&hml LS(LGUI)DQT": '"'
+    # "&hml LS(LGUI)DQT": '"'
+    "&hml LS(LGUI)PLUS": "+"
     "&hml LA(LGUI)TILDE": "~"
     "&kp LS(TAB)": Prev
     "&app_swap": Next App
@@ -79,6 +80,7 @@ parse_config:
     "&kp LA(F4)": Close
     "&dot_spc": Fullstop
     # "&smart_num": { "t": Smart, "h": "Num" }
+    "&copy_cut": { "t": "Copy", "s": "Cut" }
 
   trans_legend: { "t": "", "type": "trans" }
 
