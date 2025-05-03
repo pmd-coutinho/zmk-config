@@ -191,14 +191,14 @@ ZMK_MOD_MORPH(bs_del_l, bindings = <&bs_del>, <&kp SPACE>;
 // gnome shell task switching
 // FIXME: ignored keys
 ZMK_TRI_STATE(app_swap, bindings = <&kt LGUI>, <&kp TAB>, <&kt LGUI>;
-              ignored-key-positions = <RM2 LT2 LM1 LM2 LM3>;)
+              ignored-key-positions = <RM1 LT2 LM1 LM2 LM3>;)
 // #define PREV_APP &kp LS(TAB)
 #define NEXT_APP &app_swap
 ZMK_TRI_STATE(win_swap, bindings = <&kt LGUI>, <&kp GRAVE>, <&kt LGUI>;
-              ignored-key-positions = <RM2 LT2 LM1 LM2 LM3>;)
+              ignored-key-positions = <RM1 LT2 LM1 LM2 LM3>;)
 #define NEXT_WIN &win_swap
 ZMK_TRI_STATE(tab_swap, bindings = <&kt LCTRL>, <&kp TAB>, <&kt LCTRL>;
-              ignored-key-positions = <RM2 LT2 LM1 LM2 LM3>;)
+              ignored-key-positions = <RM1 LT2 LM1 LM2 LM3>;)
 #define NEXT_TAB &tab_swap
 #define BACK &kp C_AC_BACK
 #define FORWARD &kp C_AC_FORWARD
