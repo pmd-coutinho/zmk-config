@@ -18,7 +18,7 @@
 #include "zmk-helpers/unicode-chars/currency.dtsi"
 
 #define DEF 0
-#define COLEMAK 1
+#define HDP 1
 #define NAV 2
 #define FN 3
 #define NUM 4
@@ -215,15 +215,16 @@ ZMK_BASE_LAYER(Base,
 //                                          ╰─────────────┴─────────────╯ ╰─────────────┴─────────────╯
 )
 
-ZMK_BASE_LAYER(Colemak,
+//add hands down promethium here
+ZMK_BASE_LAYER(HDP,
 //╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-    &kp Q         &kp W         &kp F         &kp P         &kp B       ,   &kp J         &kp L         &kp U         &kp Y         &kp SQT     ,
+    &kp F         &kp P         &kp D         &kp L         &kp X       ,   &comma_morph   &kp U         &kp O         &kp Y         &kp B      ,
 //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-    &hml LGUI A   &hml LALT R   &hml LSHFT S  &hml LCTRL T  &kp G       ,   &kp M         &hmr LCTRL N  &hmr RSHFT E  &hmr LALT I   &hmr LGUI O ,
+    &hml LGUI S   &hml LALT N   &hml LSHFT T  &hml LCTRL H  &kp K       ,   &kp H         &hmr LCTRL A  &hmr RSHFT E  &hmr LALT I   &hmr LGUI C ,
 //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-    &kp Z         &kp X         &kp C         &kp D         &kp V       ,   &kp K         &kp H         &kp COMMA     &kp DOT       &kp FSLH    ,
-//╰─────────────┼─────────────┴─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┴─────────────┼─────────────┤
-                                              &lt_spc NAV 0 &lt FN RET  ,   SMART_NUM     MAGIC_SHIFT
+    &kp V         &kp W         &kp G         &kp M         &kp J       ,   &kp MINUS     &dot_morph    &kp SQT        &dot_morph    &qexcl     ,
+//╰─────────────┼─────────────┴─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┴───────────────────────────╯
+                                              &lt NAV R     &lt FN RET  ,   SMART_NUM     MAGIC_SHIFT
 //                                          ╰─────────────┴─────────────╯ ╰─────────────┴─────────────╯
 )
 
@@ -267,7 +268,7 @@ ZMK_BASE_LAYER(System,
 //╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
                                _BT_SEL_KEYS_                            ,   &out OUT_USB  ___           ___           ___           ___         ,
 //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-    &rgb_ug RGB_BRI           &rgb_ug RGB_SPI           &rgb_ug RGB_HUI           ___           &bootloader ,   &bootloader   ___           &tog DEF      &tog COLEMAK  ___         ,
+    &rgb_ug RGB_BRI           &rgb_ug RGB_SPI           &rgb_ug RGB_HUI           ___           &bootloader ,   &bootloader   ___           &tog DEF      &tog HDP  ___         ,
 //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
     &rgb_ug RGB_BRD           &rgb_ug RGB_SPD           &rgb_ug RGB_HUD           &rgb_ug RGB_EFF           &sys_reset  ,   &sys_reset    ___           ___           ___           ___         ,
 //╰─────────────┼─────────────┴─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┴─────────────┼─────────────┤
