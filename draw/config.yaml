@@ -81,6 +81,8 @@ parse_config:
     "&dot_spc": Fullstop
     "&smart_num": { "t": Smart, "h": Num }
     "&copy_cut": { "t": "Copy", "s": "Cut" }
+    "&kp C_AC_BACK": Back
+    "&kp C_AC_FORWARD": Forward
 
   trans_legend: { "t": "", "type": "trans" }
 
