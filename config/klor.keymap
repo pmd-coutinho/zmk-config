@@ -18,8 +18,8 @@
     ZMK_LAYER(                                                                                    \
         name,                                                                                     \
         LT RT                                                                                     \
-        &kp ESC              LM                                            RM           &none     \
-        &none                LB &kp C_MUTE                             &kp C_PP    RB           &none     \
+        &kp ESC              LM                                            RM           &kp Q     \
+        &none                LB &kp C_MUTE                             &kp C_PP    RB           &kp Z     \
         &kp LEFT  &kp RIGHT  LH                                            RH    &kp UP &kp DOWN, &inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp C_AC_FORWARD C_AC_BACK)
 
 
