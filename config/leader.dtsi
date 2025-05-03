@@ -29,6 +29,11 @@ ZMK_LEADER_SEQUENCE(pt_u_circumflex, &pt_u_circumflex,   U C)  // û/Û
 ZMK_LEADER_SEQUENCE(pt_a_tilde,     &pt_a_tilde,        A T)  // ã/Ã
 ZMK_LEADER_SEQUENCE(pt_aa,          &pt_aa,             A A)  // á/Á
 
+/* Currency */
+ZMK_LEADER_SEQUENCE(curr_pound, &curr_pound, P O U)
+ZMK_LEADER_SEQUENCE(curr_euro, &curr_euro, E U R)
+ZMK_LEADER_SEQUENCE(curr_dollar, &curr_dollar, D O L)
+
 // BLE and USB
 #ifdef CONFIG_WIRELESS
 ZMK_LEADER_SEQUENCE(usb,        &out OUT_USB,   U S B)
