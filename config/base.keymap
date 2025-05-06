@@ -201,6 +201,8 @@ ZMK_TRI_STATE(tab_swap, bindings = <&kt LCTRL>, <&kp TAB>, <&kt LCTRL>;
 // hyper/meh keys
 #define LHYPER LS(LC(LA(LGUI)))
 #define RHYPER RS(RC(RA(RGUI)))
+#define LMEH LS(LC(LALT))
+#define RMEH RS(RC(RALT))
 
 /* Keymap */
 
@@ -212,7 +214,7 @@ ZMK_LAYER(Base,
 // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
      &gresc        &hml LALT A   &hml LGUI S   &hml LSHFT D  &hml LCTRL F  &kp G             &kp H         &hmr LCTRL J  &hmr RSHFT K  &hmr LGUI L  &hmr LALT SQT  &kp DEL
 // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-     &arc_shift    &kp Z         &kp X         &kp C         &kp V         &kp B             &kp N         &kp M         &comma_morph  &dot_morph    &kp FSLH      &sk LHYPER
+     &arc_shift    &kp Z         &kp X         &kp C         &kp V         &kp B             &kp N         &kp M         &comma_morph  &dot_morph    &kp FSLH      &sk RMEH
 // ╰───────────────────────────────────────────────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼───────────────────────────────────────────────────────╯
                                                SMART_NUM     LGUI_SPC_     &lt FN TAB        &lt NAV RET   &bs_del_l     &arc_shift
 //                                           ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯

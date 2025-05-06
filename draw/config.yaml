@@ -83,6 +83,8 @@ parse_config:
     "&copy_cut": { "t": "Copy", "s": "Cut" }
     "&kp C_AC_BACK": Back
     "&kp C_AC_FORWARD": Forward
+    "&kp LS(LC(LALT))": Meh
+    "&kp RS(RC(RALT))": Meh
 
   trans_legend: { "t": "", "type": "trans" }
 
