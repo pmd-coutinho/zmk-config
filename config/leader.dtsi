@@ -16,18 +16,21 @@
 
 /* Portuguese letters */
 
-ZMK_LEADER_SEQUENCE(pt_a_grave,     &pt_a_grave,        A G)  // à/À
-ZMK_LEADER_SEQUENCE(pt_a_circumflex, &pt_a_circumflex,   A C)  // â/Â
-ZMK_LEADER_SEQUENCE(pt_c_cedilla,   &pt_c_cedilla,      C C)  // ç/Ç
-ZMK_LEADER_SEQUENCE(pt_e_grave,     &pt_e_grave,        E G)  // è/È
-ZMK_LEADER_SEQUENCE(pt_e_acute,     &pt_e_acute,        E A)  // é/É
-ZMK_LEADER_SEQUENCE(pt_e_circumflex, &pt_e_circumflex,   E C)  // ê/Ê
-ZMK_LEADER_SEQUENCE(pt_o_circumflex, &pt_o_circumflex,   O C)  // ô/Ô
-ZMK_LEADER_SEQUENCE(pt_oa,          &pt_oa,             O A)  // ó/Ó
-ZMK_LEADER_SEQUENCE(pt_u_grave,     &pt_u_grave,        U G)  // ù/Ù
-ZMK_LEADER_SEQUENCE(pt_u_circumflex, &pt_u_circumflex,   U C)  // û/Û
-ZMK_LEADER_SEQUENCE(pt_a_tilde,     &pt_a_tilde,        A T)  // ã/Ã
-ZMK_LEADER_SEQUENCE(pt_aa,          &pt_aa,             A A)  // á/Á
+ZMK_UNICODE_PAIR(pt_o_tilde,        N0, N0, F, N5,   N0, N0,  D, N5) // õ/Õ
+
+ZMK_LEADER_SEQUENCE(pt_a_grave,         &pt_a_grave,        A G)  // à/À
+ZMK_LEADER_SEQUENCE(pt_a_circumflex,    &pt_a_circumflex,   A C)  // â/Â
+ZMK_LEADER_SEQUENCE(pt_c_cedilla,       &pt_c_cedilla,      C C)  // ç/Ç
+ZMK_LEADER_SEQUENCE(pt_e_grave,         &pt_e_grave,        E G)  // è/È
+ZMK_LEADER_SEQUENCE(pt_e_acute,         &pt_e_acute,        E A)  // é/É
+ZMK_LEADER_SEQUENCE(pt_e_circumflex,    &pt_e_circumflex,   E C)  // ê/Ê
+ZMK_LEADER_SEQUENCE(pt_o_circumflex,    &pt_o_circumflex,   O C)  // ô/Ô
+ZMK_LEADER_SEQUENCE(pt_oa,              &pt_oa,             O A)  // ó/Ó
+ZMK_LEADER_SEQUENCE(pt_o_tilde,         &pt_o_tilde,        O T)  // ô/Ô
+ZMK_LEADER_SEQUENCE(pt_u_grave,         &pt_u_grave,        U G)  // ù/Ù
+ZMK_LEADER_SEQUENCE(pt_u_circumflex,    &pt_u_circumflex,   U C)  // û/Û
+ZMK_LEADER_SEQUENCE(pt_a_tilde,         &pt_a_tilde,        A T)  // ã/Ã
+ZMK_LEADER_SEQUENCE(pt_aa,              &pt_aa,             A A)  // á/Á
 
 /* Currency */
 ZMK_LEADER_SEQUENCE(curr_pound, &curr_pound, G B P)
