@@ -49,6 +49,7 @@ manifest:
     - name: nice-view-gem 
       remote: m165437 
       revision: main 
+      path: modules/zmk/nice-view-gem
 
     # Temporarily overload Zephyr until
     # https://github.com/zmkfirmware/zephyr/pull/40 is merged.
