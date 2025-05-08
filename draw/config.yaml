@@ -3,7 +3,7 @@ parse_config:
     - "modules/zmk/helpers/include"
 
   zmk_preamble: |
-    #include <zmk-helpers/key-labels/34.h>
+    #include <zmk-helpers/key-labels/klor.h>
     #define CONFIG_WIRELESS
 
   raw_binding_map:
@@ -170,6 +170,6 @@ parse_config:
     UNDERSCORE: _
 
 draw_config:
-  append_colon_to_layer_header: false
+  append_colon_to_layer_header: true
   dark_mode: auto
-  footer_text: "urob/zmk-config"
+  footer_text: "pmd-coutinho/zmk-config"
