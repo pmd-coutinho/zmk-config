@@ -7,10 +7,10 @@
   ╰───────╮ LH3 LH2 LH1 LH0 │ │ RH0 RH1 RH2 RH3 ╭───────╯
           ╰─────────────────╯ ╰─────────────────╯ */
 
-#define COMBO_TERM_FAST 18
+#define COMBO_TERM_FAST 25
 #define COMBO_TERM_SLOW 30
 
-#define COMBO_IDLE_FAST 150
+#define COMBO_IDLE_FAST 100
 #define COMBO_IDLE_SLOW 50
 
 // TODO: consider reverse symbols
