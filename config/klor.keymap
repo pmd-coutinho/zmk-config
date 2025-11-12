@@ -14,13 +14,15 @@
     };
 };
 
+#define HOST_OS 1
+
 #define ZMK_BASE_LAYER(name, LT, RT, LM, RM, LB, RB, LH, RH)                                      \
     ZMK_LAYER(                                                                                    \
         name,                                                                                     \
         LT RT                                                                                     \
         &kp ESC              LM                                            RM           &kp Q     \
         &none                LB &kp C_MUTE                             &kp C_PP    RB           &kp Z     \
-        &kp LEFT  &kp RIGHT  LH                                            RH    &kp UP &kp DOWN, &inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp C_AC_FORWARD C_AC_BACK)
+        &kp LEFT  &mo WORKSPACE  LH                                            RH    &mo TMUX &kp DOWN, &inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp C_AC_FORWARD C_AC_BACK)
 
 
 #include "klor.h"

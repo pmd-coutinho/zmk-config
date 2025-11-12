@@ -26,6 +26,8 @@
 #define MOUSE 6
 #define SELECT_CONT_SL 7
 #define SELECT_CONT 8
+#define WORKSPACE 9
+#define TMUX 10
 
 #define XXX &none
 #define ___ &trans
@@ -121,22 +123,13 @@ ZMK_MACRO(layer_select_cont_sl, wait-ms = <0>; tap-ms = <0>;
 
 /* Magic-shift & auto-layers */
 
-// Tap: repeat after alpha, else sticky-shift |
-// Shift + tap/ double-tap: caps-word | Hold: shift.
+// Tap: sticky-shift | Shift + tap/ double-tap: caps-word | Hold: shift.
 #define MAGIC_SHIFT &magic_shift LSHFT 0
 ZMK_HOLD_TAP(magic_shift, bindings = <&kp>, <&magic_shift_tap>;
              flavor = "balanced"; tapping-term-ms = <200>;
              quick-tap-ms = <QUICK_TAP_MS>;)
-ZMK_MOD_MORPH(magic_shift_tap, bindings = <&shift_repeat>, <&caps_word>;
+ZMK_MOD_MORPH(magic_shift_tap, bindings = <&sk LSHFT>, <&caps_word>;
               mods = <(MOD_LSFT)>;)
-ZMK_ADAPTIVE_KEY(
-    shift_repeat, bindings = <&sk LSHFT>;
-    repeat {
-      trigger-keys = <A B C D E F G H I J K L M N O P Q R S T U V W X Y Z>;
-      bindings = <&key_repeat>;
-      max-prior-idle-ms = <1200>;
-      strict-modifiers;
-    };)
 &caps_word { // Mods deactivate caps-word, requires PR #1451. [TODO: rebase]
   /delete-property/ ignore-modifiers;
 };
@@ -218,8 +211,12 @@ ZMK_MACRO(sel_line_down_start, wait-ms = <0>; tap-ms = <5>;
 // Continue selection macros (reactivate sticky layer).
 LAYER_TAP(sel_word_left_cont,   &kp LC(LS(LEFT)))
 LAYER_TAP(sel_word_right_cont,  &kp LC(LS(RIGHT)))
-LAYER_TAP(sel_line_up_cont,     &kp LS(UP))
-LAYER_TAP(sel_line_down_cont,   &kp LS(DOWN))
+// Line up: select up then move to line start (cursor at start of newly selected line)
+ZMK_MACRO(sel_line_up_cont, wait-ms = <0>; tap-ms = <5>;
+          bindings = <&kp LS(UP) &kp HOME>, <&layer_select_cont_sl>;)
+// Line down: select down then move to line end (cursor at end of newly selected line)
+ZMK_MACRO(sel_line_down_cont, wait-ms = <0>; tap-ms = <5>;
+          bindings = <&kp LS(DOWN) &kp END>, <&layer_select_cont_sl>;)
 
 // Misc aliases. [TODO: clean up]
 #define CANCEL    &kp K_CANCEL            // Cancel caps-word & auto-layers.
@@ -229,6 +226,147 @@ LAYER_TAP(sel_line_down_cont,   &kp LS(DOWN))
 #define PIN_APP   &kp LG(LC(LS(A)))       // Pin application across desktops.
 #define DSK_MGR   &kp LA(GRAVE)           // Desktop manager.
 #define VOL_DOWN  &hmr RSHFT C_VOL_DN
+
+/* Workspace navigation aliases (niri) */
+
+// Window/Column navigation within workspace
+#define WS_LEFT   &kp LG(H)               // Focus column left
+#define WS_DOWN   &kp LG(J)               // Focus window down
+#define WS_UP     &kp LG(K)               // Focus window up
+#define WS_RIGHT  &kp LG(L)               // Focus column right
+
+// Workspace navigation (up/down on same monitor)
+#define WS_NEXT   &kp LG(U)               // Focus workspace down
+#define WS_PREV   &kp LG(I)               // Focus workspace up
+
+// Monitor navigation
+#define MON_LEFT  &kp LG(LS(H))           // Focus monitor left
+#define MON_DOWN  &kp LG(LS(J))           // Focus monitor down
+#define MON_UP    &kp LG(LS(K))           // Focus monitor up
+#define MON_RIGHT &kp LG(LS(L))           // Focus monitor right
+
+// Move window within workspace
+#define MV_LEFT   &kp LG(LC(H))           // Move column left
+#define MV_DOWN   &kp LG(LC(J))           // Move window down
+#define MV_UP     &kp LG(LC(K))           // Move window up
+#define MV_RIGHT  &kp LG(LC(L))           // Move column right
+
+// Move window to workspace
+#define MV_WS_NEXT &kp LG(LC(U))          // Move to workspace down
+#define MV_WS_PREV &kp LG(LC(I))          // Move to workspace up
+
+// Move window to monitor
+#define MV_MON_L  &kp LG(LS(LC(H)))       // Move to monitor left
+#define MV_MON_D  &kp LG(LS(LC(J)))       // Move to monitor down
+#define MV_MON_U  &kp LG(LS(LC(K)))       // Move to monitor up
+#define MV_MON_R  &kp LG(LS(LC(L)))       // Move to monitor right
+
+// Named workspace shortcuts (Mod+1-9,0)
+#define WS_1      &kp LG(N1)              // Slack (eDP-1)
+#define WS_2      &kp LG(N2)              // Ayugram (eDP-1)
+#define WS_3      &kp LG(N3)              // Notion Calendar (eDP-1)
+#define WS_4      &kp LG(N4)              // Google Meet (eDP-1)
+#define WS_5      &kp LG(N5)              // Bitwarden (eDP-1)
+#define WS_6      &kp LG(N6)              // Ghostty (DP-3)
+#define WS_7      &kp LG(N7)              // VSCode (DP-3)
+#define WS_8      &kp LG(N8)              // Azure Data Studio (DP-3)
+#define WS_9      &kp LG(N9)              // Zen Browser (DP-2)
+#define WS_0      &kp LG(N0)              // Free (DP-2)
+
+// Window management
+#define WS_CLOSE  &kp LG(Q)               // Close window
+#define WS_TOGGLE_FLOAT &kp LG(V)         // Toggle floating
+#define WS_MAXIMIZE &kp LG(F)             // Maximize column
+#define WS_FULLSCREEN &kp LG(LS(F))       // Fullscreen window
+#define WS_CENTER &kp LG(C)               // Center column
+
+/* Tmux navigation aliases */
+
+// Prefix: Ctrl+Space
+#define TMUX_PREFIX &kp LC(SPACE)         // Tmux prefix key
+
+// Pane navigation (uses vim-tmux-navigator, so direct Ctrl+h/j/k/l)
+#define TMUX_LEFT  &kp LC(H)              // Navigate to left pane
+#define TMUX_DOWN  &kp LC(J)              // Navigate to down pane
+#define TMUX_UP    &kp LC(K)              // Navigate to up pane
+#define TMUX_RIGHT &kp LC(L)              // Navigate to right pane
+
+// Pane splitting (prefix + key)
+#define TMUX_SPLIT_H &tmux_split_h        // Split horizontally (prefix + \)
+#define TMUX_SPLIT_V &tmux_split_v        // Split vertically (prefix + -)
+
+// Pane resizing (prefix + h/j/k/l)
+#define TMUX_RESIZE_LEFT  &tmux_resize_left   // Resize pane left (prefix + h)
+#define TMUX_RESIZE_DOWN  &tmux_resize_down   // Resize pane down (prefix + j)
+#define TMUX_RESIZE_UP    &tmux_resize_up     // Resize pane up (prefix + k)
+#define TMUX_RESIZE_RIGHT &tmux_resize_right  // Resize pane right (prefix + l)
+
+// Pane management
+#define TMUX_CLOSE &tmux_close            // Close pane (prefix + x)
+#define TMUX_MAXIMIZE &tmux_maximize      // Toggle pane zoom (prefix + m)
+#define TMUX_ROTATE &tmux_rotate          // Rotate panes (prefix + o)
+
+// Window management
+#define TMUX_NEW_WINDOW &tmux_new_window  // New window (prefix + c)
+#define TMUX_NEXT_WIN &tmux_next_window   // Next window (prefix + n)
+#define TMUX_PREV_WIN &tmux_prev_window   // Previous window (prefix + p)
+#define TMUX_WIN_1 &tmux_window_1         // Go to window 1 (prefix + 1)
+#define TMUX_WIN_2 &tmux_window_2         // Go to window 2 (prefix + 2)
+#define TMUX_WIN_3 &tmux_window_3         // Go to window 3 (prefix + 3)
+#define TMUX_WIN_4 &tmux_window_4         // Go to window 4 (prefix + 4)
+#define TMUX_WIN_5 &tmux_window_5         // Go to window 5 (prefix + 5)
+
+// Copy mode
+#define TMUX_COPY &tmux_copy              // Enter copy mode (prefix + [)
+#define TMUX_PASTE &tmux_paste            // Paste (prefix + P)
+
+// Session management
+#define TMUX_DETACH &tmux_detach          // Detach from session (prefix + d)
+#define TMUX_RELOAD &tmux_reload          // Reload config (prefix + r)
+
+// Tmux command macros (prefix + key combinations)
+ZMK_MACRO(tmux_split_h, wait-ms = <0>; tap-ms = <5>;
+          bindings = <&kp LC(SPACE) &kp BSLH>;)
+ZMK_MACRO(tmux_split_v, wait-ms = <0>; tap-ms = <5>;
+          bindings = <&kp LC(SPACE) &kp MINUS>;)
+ZMK_MACRO(tmux_resize_left, wait-ms = <0>; tap-ms = <5>;
+          bindings = <&kp LC(SPACE) &kp H>;)
+ZMK_MACRO(tmux_resize_down, wait-ms = <0>; tap-ms = <5>;
+          bindings = <&kp LC(SPACE) &kp J>;)
+ZMK_MACRO(tmux_resize_up, wait-ms = <0>; tap-ms = <5>;
+          bindings = <&kp LC(SPACE) &kp K>;)
+ZMK_MACRO(tmux_resize_right, wait-ms = <0>; tap-ms = <5>;
+          bindings = <&kp LC(SPACE) &kp L>;)
+ZMK_MACRO(tmux_close, wait-ms = <0>; tap-ms = <5>;
+          bindings = <&kp LC(SPACE) &kp X>;)
+ZMK_MACRO(tmux_maximize, wait-ms = <0>; tap-ms = <5>;
+          bindings = <&kp LC(SPACE) &kp M>;)
+ZMK_MACRO(tmux_rotate, wait-ms = <0>; tap-ms = <5>;
+          bindings = <&kp LC(SPACE) &kp O>;)
+ZMK_MACRO(tmux_new_window, wait-ms = <0>; tap-ms = <5>;
+          bindings = <&kp LC(SPACE) &kp C>;)
+ZMK_MACRO(tmux_next_window, wait-ms = <0>; tap-ms = <5>;
+          bindings = <&kp LC(SPACE) &kp N>;)
+ZMK_MACRO(tmux_prev_window, wait-ms = <0>; tap-ms = <5>;
+          bindings = <&kp LC(SPACE) &kp P>;)
+ZMK_MACRO(tmux_window_1, wait-ms = <0>; tap-ms = <5>;
+          bindings = <&kp LC(SPACE) &kp N1>;)
+ZMK_MACRO(tmux_window_2, wait-ms = <0>; tap-ms = <5>;
+          bindings = <&kp LC(SPACE) &kp N2>;)
+ZMK_MACRO(tmux_window_3, wait-ms = <0>; tap-ms = <5>;
+          bindings = <&kp LC(SPACE) &kp N3>;)
+ZMK_MACRO(tmux_window_4, wait-ms = <0>; tap-ms = <5>;
+          bindings = <&kp LC(SPACE) &kp N4>;)
+ZMK_MACRO(tmux_window_5, wait-ms = <0>; tap-ms = <5>;
+          bindings = <&kp LC(SPACE) &kp N5>;)
+ZMK_MACRO(tmux_copy, wait-ms = <0>; tap-ms = <5>;
+          bindings = <&kp LC(SPACE) &kp LBKT>;)
+ZMK_MACRO(tmux_paste, wait-ms = <0>; tap-ms = <5>;
+          bindings = <&kp LC(SPACE) &kp LS(P)>;)
+ZMK_MACRO(tmux_detach, wait-ms = <0>; tap-ms = <5>;
+          bindings = <&kp LC(SPACE) &kp D>;)
+ZMK_MACRO(tmux_reload, wait-ms = <0>; tap-ms = <5>;
+          bindings = <&kp LC(SPACE) &kp R>;)
 
 /* Keymap */
 
@@ -346,6 +484,30 @@ ZMK_BASE_LAYER(SELECT_CONT,
     ___           ___           ___           ___           ___         ,   &sel_word_left_cont  &sel_line_up_cont  &sel_line_down_cont  &sel_word_right_cont  ___  ,
 //╰─────────────┼─────────────┴─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┴───────────────────────────╯
                                               ___           ___         ,   ___           ___
+//                                          ╰─────────────┴─────────────╯ ╰─────────────┴─────────────╯
+)
+
+ZMK_BASE_LAYER(Workspace,
+//╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
+    WS_1          WS_2          WS_3          WS_4          WS_5        ,   WS_6          WS_7          WS_8          WS_9          WS_0        ,
+//├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+    &sk LGUI      &sk LALT      &sk LSHFT     &sk LCTRL     WS_PREV     ,   WS_LEFT       WS_DOWN       WS_UP         WS_RIGHT      WS_NEXT     ,
+//├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+    WS_CLOSE      WS_TOGGLE_FLOAT WS_CENTER   WS_MAXIMIZE   WS_FULLSCREEN , MON_LEFT      MON_DOWN      MON_UP        MON_RIGHT     ___         ,
+//╰─────────────┼─────────────┴─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┴───────────────────────────╯
+                                              ___           ___         ,   ___           CANCEL
+//                                          ╰─────────────┴─────────────╯ ╰─────────────┴─────────────╯
+)
+
+ZMK_BASE_LAYER(Tmux,
+//╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
+    TMUX_WIN_1    TMUX_WIN_2    TMUX_WIN_3    TMUX_WIN_4    TMUX_WIN_5  ,   TMUX_NEW_WINDOW TMUX_PREV_WIN TMUX_NEXT_WIN TMUX_ROTATE ___         ,
+//├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+    &sk LGUI      &sk LALT      &sk LSHFT     &sk LCTRL     ___         ,   TMUX_LEFT     TMUX_DOWN     TMUX_UP       TMUX_RIGHT    ___         ,
+//├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+    TMUX_CLOSE    TMUX_SPLIT_V  TMUX_SPLIT_H  TMUX_MAXIMIZE TMUX_RELOAD ,   TMUX_RESIZE_LEFT TMUX_RESIZE_DOWN TMUX_RESIZE_UP TMUX_RESIZE_RIGHT ___  ,
+//╰─────────────┼─────────────┴─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┴───────────────────────────╯
+                                              TMUX_COPY     TMUX_PASTE  ,   TMUX_DETACH   CANCEL
 //                                          ╰─────────────┴─────────────╯ ╰─────────────┴─────────────╯
 )
 
